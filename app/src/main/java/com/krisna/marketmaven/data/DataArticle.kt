@@ -8,7 +8,14 @@ object DataArticle {
         Article(
             "John Smith",
             "Stocks surge as earnings reports beat expectations",
-            "Stocks jumped to record highs as a string of strong earnings reports from major companies exceeded Wall Street's expectations. The Dow Jones Industrial Average rose 500 points, or 1.5%, while the S&P 500 and Nasdaq Composite also gained 1.5%.",
+            "The stock market experienced a surge in activity as companies reported better-than-expected earnings. This is an indication that businesses are doing well and making profits, which is generally seen as a positive sign for the economy.\n"+
+                    "When a company reports earnings, it is essentially telling investors how much profit it made during a specific period of time. This is typically done on a quarterly basis, although some companies report earnings on an annual basis.\n" +
+                    "\n" +
+                    "When a company's earnings exceed the expectations of analysts and investors, it can lead to a surge in the stock price. This is because investors are more likely to buy shares in a company that is performing well and making money.\n" +
+                    "\n" +
+                    "The surge in the stock market can also have a positive impact on the broader economy. When stock prices rise, it can create a \"wealth effect\" that encourages consumers to spend more money, which can in turn drive economic growth.\n" +
+                    "\n" +
+                    "Overall, the surge in the stock market following better-than-expected earnings reports is seen as a positive sign for both businesses and the broader economy. It indicates that companies are performing well and making profits, which is a key driver of economic growth.",
             "23 February 2023",
             "Earnings reports beat expectations",
             R.drawable.article1
