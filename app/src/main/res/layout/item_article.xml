@@ -11,7 +11,7 @@
         android:id="@+id/clArticle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp">
+        android:layout_margin="15dp">
         <ImageView
             android:id="@+id/ivPoster"
             android:layout_width="80dp"
@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:text="Tesla CEO Elon Musk sells $1 billion in stock"
             android:textSize="18sp"
+            android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@id/ivPoster"
             app:layout_constraintEnd_toEndOf="@id/clArticle"
             app:layout_constraintTop_toTopOf="@id/clArticle"
@@ -43,6 +44,19 @@
             android:textStyle="normal"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"
             app:layout_constraintStart_toEndOf="@id/ivPoster"
+            app:layout_constraintBottom_toTopOf="@id/tvOverview"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/tvOverview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="overview"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintTop_toBottomOf="@id/tvPublishDate"
+            app:layout_constraintStart_toEndOf="@id/ivPoster"
+            app:layout_constraintEnd_toEndOf="@id/clArticle"
             app:layout_constraintBottom_toBottomOf="@id/clArticle"
             android:layout_marginStart="10dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

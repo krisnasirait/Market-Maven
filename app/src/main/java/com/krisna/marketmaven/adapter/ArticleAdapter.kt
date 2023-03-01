@@ -19,6 +19,7 @@ class ArticleAdapter(
         fun bind(item: Article) {
             binding.tvTitle.text = item.title
             binding.tvPublishDate.text = item.publishedAt
+            binding.tvOverview.text = item.overview
             Glide.with(binding.root)
                 .load(item.image)
                 .placeholder(R.drawable.article1)
