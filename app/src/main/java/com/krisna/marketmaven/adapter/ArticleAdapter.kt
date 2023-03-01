@@ -8,13 +8,11 @@ import com.bumptech.glide.Glide
 import com.krisna.marketmaven.R
 import com.krisna.marketmaven.data.model.Article
 import com.krisna.marketmaven.databinding.ItemArticleBinding
-import io.reactivex.rxjava3.subjects.PublishSubject
-
-class ArticleAdapter: RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder> () {
+class ArticleAdapter(
+    private val itemClickListener: OnItemClickListener
+): RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder> () {
 
     private val itemArticle = mutableListOf<Article?>()
-    private val clickSubject = PublishSubject.create<Article>()
-
 
     inner class ArticleViewHolder(private val binding: ItemArticleBinding) :
     RecyclerView.ViewHolder(binding.root){
@@ -25,8 +23,8 @@ class ArticleAdapter: RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder> () 
                 .load(item.image)
                 .placeholder(R.drawable.article1)
                 .into(binding.ivPoster)
-            binding.root.setOnClickListener{
-                clickSubject.onNext(item)
+            binding.root.setOnClickListener {
+                itemClickListener.onItemClick(item)
             }
         }
     }
@@ -55,7 +53,7 @@ class ArticleAdapter: RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder> () 
     }
 
 
-    fun getClickSubject() : PublishSubject<Article> {
-        return clickSubject
+    interface OnItemClickListener {
+        fun onItemClick(article: Article)
     }
 }

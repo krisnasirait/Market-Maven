@@ -10,9 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.krisna.marketmaven.adapter.ArticleAdapter
 import com.krisna.marketmaven.data.DataArticle
+import com.krisna.marketmaven.data.model.Article
 import com.krisna.marketmaven.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
 
     private lateinit var rv: RecyclerView
     private lateinit var adapterArticle: ArticleAdapter
@@ -30,21 +31,9 @@ class MainActivity : AppCompatActivity() {
         rv.layoutManager = LinearLayoutManager(this)
         rv.setHasFixedSize(true)
 
-        adapterArticle = ArticleAdapter()
+        adapterArticle = ArticleAdapter(this)
         adapterArticle.setDataArticle(DataArticle.itemArticle)
         rv.adapter = adapterArticle
-
-        adapterArticle.getClickSubject().subscribe { article ->
-            Intent(this, ArticleDetailActivity::class.java).apply {
-                putExtra("author", article.author)
-                putExtra("title", article.title)
-                putExtra("overview", article.overview)
-                putExtra("description", article.description)
-                putExtra("publishedAt", article.publishedAt)
-                putExtra("image", article.image)
-                startActivity(this)
-            }
-        }
 
     }
 
@@ -59,6 +48,18 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onItemClick(article: Article) {
+        Intent(this, ArticleDetailActivity::class.java).apply {
+            putExtra("author", article.author)
+            putExtra("title", article.title)
+            putExtra("overview", article.overview)
+            putExtra("description", article.description)
+            putExtra("publishedAt", article.publishedAt)
+            putExtra("image", article.image)
+            startActivity(this)
         }
     }
 }
