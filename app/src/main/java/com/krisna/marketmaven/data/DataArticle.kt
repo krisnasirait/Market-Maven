@@ -45,5 +45,45 @@ object DataArticle {
             "Bitcoin hits new all-time high",
             R.drawable.article1
         ),
+        Article(
+            "Sarah Kim",
+            "Inflation rises to highest level in 39 years",
+            "US inflation rose to its highest level in 39 years in January, according to data from the Labor Department. The Consumer Price Index (CPI) increased by 7% compared to the previous year, driven by rising energy and food prices.",
+            "2022-02-24T15:00:00Z",
+            "Inflation rises to highest level in 39 years",
+            R.drawable.article1
+        ),
+        Article(
+            "John Lee",
+            "Global stocks tumble as investors worry about rising interest rates",
+            "Stocks around the world fell sharply as investors grew concerned about the impact of rising interest rates on corporate earnings. The Dow Jones Industrial Average dropped 2.5%, while the S&P 500 and Nasdaq Composite each lost 2.7%.",
+            "2022-02-23T16:30:00Z",
+            "Global stocks tumble on interest rate fears",
+            R.drawable.article1
+        ),
+        Article(
+            "Ava Patel",
+            "Tech stocks rally on positive earnings reports",
+            "Shares of technology companies surged as several big players reported better-than-expected earnings. Apple, Amazon, and Google parent Alphabet all saw their stock prices jump by more than 4%, helping to push the Nasdaq Composite up by 2.5%.",
+            "2022-02-23T16:00:00Z",
+            "Tech stocks rally on earnings reports",
+            R.drawable.article1
+        ),
+        Article(
+            "David Kim",
+            "US jobless claims fall to new pandemic low",
+            "The number of Americans filing for unemployment benefits fell to a new pandemic low of 200,000 last week, according to the Labor Department. The figure was lower than expected and suggests that the labor market is continuing to recover from the pandemic.",
+            "2022-02-22T17:00:00Z",
+            "US jobless claims fall to pandemic low",
+            R.drawable.article1
+        ),
+        Article(
+            "Sophia Lee",
+            "China's economy slows as property sector cools",
+            "China's economic growth slowed to 4% in the fourth quarter, down from 4.9% in the previous quarter, as the government's efforts to cool the property sector began to take effect. The figure was in line with expectations and reflects the ongoing challenges facing the world's second-largest economy.",
+            "2022-02-22T16:30:00Z",
+            "China's economy slows as property sector cools",
+            R.drawable.article1
+        )
             )
 }

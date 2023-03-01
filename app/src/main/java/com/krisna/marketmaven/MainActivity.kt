@@ -1,5 +1,6 @@
 package com.krisna.marketmaven
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -32,6 +33,18 @@ class MainActivity : AppCompatActivity() {
         adapterArticle = ArticleAdapter()
         adapterArticle.setDataArticle(DataArticle.itemArticle)
         rv.adapter = adapterArticle
+
+        adapterArticle.getClickSubject().subscribe { article ->
+            Intent(this, ArticleDetailActivity::class.java).apply {
+                putExtra("author", article.author)
+                putExtra("title", article.title)
+                putExtra("overview", article.overview)
+                putExtra("description", article.description)
+                putExtra("publishedAt", article.publishedAt)
+                putExtra("image", article.image)
+                startActivity(this)
+            }
+        }
 
     }
 
