@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.krisna.marketmaven.R
 import com.krisna.marketmaven.data.model.Article
 import com.krisna.marketmaven.databinding.ItemArticleBinding
+
 class ArticleAdapter(
     private val itemClickListener: OnItemClickListener
 ): RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder> () {
@@ -22,7 +22,6 @@ class ArticleAdapter(
             binding.tvOverview.text = item.overview
             Glide.with(binding.root)
                 .load(item.image)
-                .placeholder(R.drawable.article1)
                 .into(binding.ivPoster)
             binding.root.setOnClickListener {
                 itemClickListener.onItemClick(item)

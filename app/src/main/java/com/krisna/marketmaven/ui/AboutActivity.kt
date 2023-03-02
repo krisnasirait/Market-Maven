@@ -1,4 +1,4 @@
-package com.krisna.marketmaven
+package com.krisna.marketmaven.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

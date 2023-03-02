@@ -1,4 +1,4 @@
-package com.krisna.marketmaven
+package com.krisna.marketmaven.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.krisna.marketmaven.R
 import com.krisna.marketmaven.adapter.ArticleAdapter
 import com.krisna.marketmaven.data.DataArticle
 import com.krisna.marketmaven.data.model.Article
@@ -54,14 +55,16 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(article: Article) {
-        Intent(this, ArticleDetailActivity::class.java).apply {
-            putExtra("author", article.author)
-            putExtra("title", article.title)
-            putExtra("overview", article.overview)
-            putExtra("description", article.description)
-            putExtra("publishedAt", article.publishedAt)
-            putExtra("image", article.image)
-            startActivity(this)
+        val intent = Intent(this, ArticleDetailActivity::class.java)
+        val bundle = Bundle().apply {
+            putString("author", article.author)
+            putString("title", article.title)
+            putString("overview", article.overview)
+            putString("description", article.description)
+            putString("publishedAt", article.publishedAt)
+            putInt("image", article.image)
         }
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 }
