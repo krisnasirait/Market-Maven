@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="Tesla CEO Elon Musk sells $1 billion in stock"
             android:textSize="18sp"
-            android:textColor="@color/black"
+            android:textColor="@color/bright_blue"
             app:layout_constraintStart_toEndOf="@id/ivPoster"
             app:layout_constraintEnd_toEndOf="@id/clArticle"
             app:layout_constraintTop_toTopOf="@id/clArticle"
