@@ -2,6 +2,7 @@ package com.krisna.marketmaven.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.krisna.marketmaven.R
 import com.krisna.marketmaven.adapter.ArticleAdapter
 import com.krisna.marketmaven.data.DataArticle
-import com.krisna.marketmaven.data.model.Article
 import com.krisna.marketmaven.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
@@ -54,17 +54,10 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
         }
     }
 
-    override fun onItemClick(article: Article) {
-        val intent = Intent(this, ArticleDetailActivity::class.java)
-        val bundle = Bundle().apply {
-            putString("author", article.author)
-            putString("title", article.title)
-            putString("overview", article.overview)
-            putString("description", article.description)
-            putString("publishedAt", article.publishedAt)
-            putInt("image", article.image)
+    override fun onItemClick(article: Parcelable) {
+        val intent = Intent(this, ArticleDetailActivity::class.java).apply {
+            putExtra("article", article)
         }
-        intent.putExtras(bundle)
         startActivity(intent)
     }
 }

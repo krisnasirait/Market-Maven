@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.krisna.marketmaven.data.model.Article
 import com.krisna.marketmaven.databinding.ActivityArticleDetailBinding
 
 class ArticleDetailActivity : AppCompatActivity() {
@@ -19,11 +20,11 @@ class ArticleDetailActivity : AppCompatActivity() {
     }
 
     private fun getAndShowData() {
-        val bundle = intent.extras
-        val author = bundle?.getString("author")
-        val title = bundle?.getString("title")
-        val description = bundle?.getString("description")
-        val image = bundle?.getInt("image")
+        val article = intent?.getParcelableExtra<Article>("article")
+        val author = "Author : " + article?.author
+        val title = article?.title
+        val description = article?.description
+        val image = article?.image
 
         Glide.with(this)
             .load(image)
