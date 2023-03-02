@@ -18,7 +18,7 @@ class ArticleDetailActivity : AppCompatActivity() {
         getAndShowData()
     }
 
-    fun getAndShowData() {
+    private fun getAndShowData() {
         val bundle = intent.extras
         val author = bundle?.getString("author")
         val title = bundle?.getString("title")
