@@ -1,6 +1,7 @@
 package com.krisna.marketmaven.adapter
 
 import android.annotation.SuppressLint
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -54,6 +55,6 @@ class ArticleAdapter(
 
 
     interface OnItemClickListener {
-        fun onItemClick(article: Article)
+        fun onItemClick(article: Parcelable)
     }
 }
