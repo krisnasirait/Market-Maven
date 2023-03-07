@@ -14,8 +14,8 @@ class AboutActivity : AppCompatActivity() {
         binding = ActivityAboutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.title = "About"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        actionBar?.title = "About"
+        actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
